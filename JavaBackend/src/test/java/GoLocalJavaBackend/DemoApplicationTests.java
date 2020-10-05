@@ -1,4 +1,4 @@
-package com.GoLocalWebApp.demo;
+package GoLocalJavaBackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
