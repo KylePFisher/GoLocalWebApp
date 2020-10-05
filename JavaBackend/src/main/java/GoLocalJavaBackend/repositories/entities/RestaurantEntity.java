@@ -1,4 +1,4 @@
-package com.GoLocalWebApp.demo.repositories.entities;
+package GoLocalJavaBackend.repositories.entities;
 
 import java.io.Serializable;
 
