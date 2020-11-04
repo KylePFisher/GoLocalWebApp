@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RestuarantExample from './components/RestuarantDisplayExample';
+import MapExample from './components/MapExample';
 import Dropdown from './Components/Dropdown';
 
 const container = {
@@ -39,6 +40,9 @@ function App() {
 
 		<div>
 			<RestuarantExample/>
+		</div>
+		<div>
+			<MapExample/>
 		</div>
         <a
           className="App-link"
