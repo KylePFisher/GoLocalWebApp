@@ -32,12 +32,6 @@ function App() {
       		Example Dropdown <Dropdown options={options} />
     	</div>
 
-<select id="test" name="test">
-     <option value="test1">All</option>
-     <option value="test2">Restaurant</option>
-     <option value="Other">Other</option>
-</select>
-
 		<div>
 			<RestuarantExample/>
 		</div>
