@@ -24,12 +24,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework:spring-web'
 	compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
-	compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'	
+	compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	
+
 	runtimeOnly('com.h2database:h2')
+	runtimeOnly 'mysql:mysql-connector-java'
 }
 
 test {

@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import GoLocalJavaBackend.repositories.RestaurantRepository;
-import GoLocalJavaBackend.repositories.entities.RestaurantEntity;
+//import GoLocalJavaBackend.repositories.RestaurantRepository;
+//import GoLocalJavaBackend.repositories.entities.RestaurantEntity;
 
 @RestController
 public class TestController {
 	
-	RestaurantRepository restaurantRepository;
+	/*RestaurantRepository restaurantRepository;
 	
 	@Autowired
 	public TestController(RestaurantRepository restaurantRepository) {
@@ -36,5 +36,5 @@ public class TestController {
 		List<RestaurantEntity> list = restaurantRepository.findByCategory(category);
 		System.out.println(list);
 		return restaurantRepository.findByCategory(category);
-	}
+	}*/
 }
