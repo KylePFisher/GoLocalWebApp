@@ -2,6 +2,7 @@ import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import Sidebar from "react-sidebar";
 import axios from 'axios';
+import Dropdown from './Dropdown';
 
 class Map extends React.Component {
 	
@@ -12,6 +13,22 @@ class Map extends React.Component {
 			width: '50rem',
 			height: '50rem',
 		},
+		containerLeft: {
+		  width: '200px',
+		  float: 'left',
+		  height: '100px'
+		},
+		containerRight: {
+		  width: '200px',
+		  float: 'right',
+		  height: '100px'
+		},
+		options: [
+		  { key: 'All', text: 'All' },
+		  { key: 'Chinese', text: 'Chinese' }
+		],
+		category: 'nothing',
+		category2: 'nothing',
 			center: {
 			  lat: 41.257160,
 			  lng: 	-95.995102
@@ -101,9 +118,16 @@ class Map extends React.Component {
 	        }
       	)
 	}
+
+	change(event){
+		this.setState({category: event.target.value});
+	}
+	change2(event){
+		this.setState({category2: event.target.value});
+	}
 	
 	render() {
-		const { containerStyle, center, zoom, isLoaded, geolocations } = this.state;
+		const { containerStyle, containerLeft, containerRight, options, center, zoom, isLoaded, geolocations } = this.state;
 		if (!isLoaded) {
       		return <div>Loading...</div>;
     	} else {
@@ -119,6 +143,15 @@ class Map extends React.Component {
         		styles={{ sidebar: { background: "white" } }}
       		>
       		</Sidebar>
+
+			<div style={containerLeft}>
+				<Dropdown id="categorySelect" onChange={this.change.bind(this)} options={options} />
+			</div>
+			<div style={containerRight}>
+				<Dropdown id="subCategorySelect" onChange={this.change2.bind(this)} options={options} />
+			</div>
+			<p>{this.state.category} and {this.state.category2}</p>
+
 	      	<GoogleMap
 	        	mapContainerStyle={containerStyle}
 	        	center={center}
