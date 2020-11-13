@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="347f774b-b018-446a-a468-75a2e37d0e15" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/JavaBackend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/RestaurantRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/entities/RestaurantEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReactFrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReactFrontend/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GoLocalApp" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JavaeeView">
+    <option name="showModules" value="false" />
+  </component>
+  <component name="ProjectId" id="1ibWKJ9eGoMfrsC4E2IzMlSy04B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager" selected="Gradle.GoLocalWebApp">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoLocalWebApp [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GoLocalWebApp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GoLocalApp/GoLocalApp.ReactFrontend/build/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GoLocalApp/GoLocalApp.ReactFrontend/public/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="gradlew" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/gradlew" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="GoLocalApp.JavaBackend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="GoLocalJavaBackend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.GoLocalWebApp" />
+        <item itemvalue="Gradle.GoLocalWebApp [dependencies]" />
+        <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="Shell Script.gradlew" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="347f774b-b018-446a-a468-75a2e37d0e15" name="Default Changelist" comment="" />
+      <created>1602176706367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602176706367</updated>
+      <workItem from="1602462901358" duration="4829000" />
+      <workItem from="1602513908341" duration="792000" />
+      <workItem from="1602524737919" duration="504000" />
+      <workItem from="1602605999492" duration="1000" />
+      <workItem from="1602814122417" duration="1226000" />
+      <workItem from="1603671672709" duration="1027000" />
+      <workItem from="1603672884542" duration="2647000" />
+      <workItem from="1604510500270" duration="176000" />
+      <workItem from="1604511559209" duration="1184000" />
+      <workItem from="1604876330943" duration="16555000" />
+      <workItem from="1605118380773" duration="29000" />
+      <workItem from="1605118433516" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="803" y="458" key="#Assign_Data_Sources" timestamp="1605047905061">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="803" y="458" key="#Assign_Data_Sources/0.0.1792.1120@0.0.1792.1120" timestamp="1605047905061" />
+    <state x="384" y="141" key="#Project_Structure" timestamp="1605047781881">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="384" y="141" key="#Project_Structure/0.0.1792.1120@0.0.1792.1120" timestamp="1605047781881" />
+    <state x="709" y="251" key="#com.intellij.ide.util.MemberChooser" timestamp="1604936469850">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="709" y="251" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1604936469850" />
+    <state x="457" y="28" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604879010529">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="457" y="28" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1604879010529" />
+    <state width="1750" height="640" key="GridCell.Tab.0.bottom" timestamp="1605118353450">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605118353450" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508383" />
+    <state width="1750" height="640" key="GridCell.Tab.0.center" timestamp="1605118353449">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605118353449" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508383" />
+    <state width="1750" height="640" key="GridCell.Tab.0.left" timestamp="1605118353448">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605118353448" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508382" />
+    <state width="1750" height="640" key="GridCell.Tab.0.right" timestamp="1605118353450">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605118353450" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508383" />
+    <state width="1750" height="640" key="GridCell.Tab.1.bottom" timestamp="1603370741820">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1603370741820" />
+    <state width="1750" height="318" key="GridCell.Tab.1.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508385" />
+    <state width="1750" height="640" key="GridCell.Tab.1.center" timestamp="1603370741819">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1603370741819" />
+    <state width="1750" height="318" key="GridCell.Tab.1.center/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508384" />
+    <state width="1750" height="640" key="GridCell.Tab.1.left" timestamp="1603370741819">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1603370741819" />
+    <state width="1750" height="318" key="GridCell.Tab.1.left/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508384" />
+    <state width="1750" height="640" key="GridCell.Tab.1.right" timestamp="1603370741820">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="640" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1603370741820" />
+    <state width="1750" height="318" key="GridCell.Tab.1.right/0.23.1792.1017@0.23.1792.1017" timestamp="1602513508384" />
+    <state x="0" y="0" width="1390" height="722" key="SettingsEditor" timestamp="1604937049018">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="0" y="0" width="1390" height="722" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1604937049018" />
+    <state x="397" y="170" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1602462309593" />
+    <state x="573" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1602462240587">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="573" y="364" key="com.intellij.ide.util.TipDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1602462240587" />
+    <state x="273" y="258" key="new project wizard" timestamp="1602461881162">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="273" y="258" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1602461881162" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1605051993976">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1605051993976" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GoLocalApp$GoLocalWebApp.ic" NAME="GoLocalWebApp Coverage Results" MODIFIED="1602814625497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
