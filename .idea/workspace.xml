@@ -23,14 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347f774b-b018-446a-a468-75a2e37d0e15" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaBackend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/RestaurantRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/entities/RestaurantEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/entities/BusinessEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/entities/BusinessEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReactFrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReactFrontend/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +197,7 @@
       <workItem from="1604876330943" duration="16555000" />
       <workItem from="1605118380773" duration="29000" />
       <workItem from="1605118433516" duration="36000" />
+      <workItem from="1605118532085" duration="3696000" />
     </task>
     <servers />
   </component>
@@ -288,10 +286,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="273" y="258" key="new project wizard/0.23.1792.1017@0.23.1792.1017" timestamp="1602461881162" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1605051993976">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1605293472978">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1605051993976" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1605293472978" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GoLocalApp$GoLocalWebApp.ic" NAME="GoLocalWebApp Coverage Results" MODIFIED="1602814625497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

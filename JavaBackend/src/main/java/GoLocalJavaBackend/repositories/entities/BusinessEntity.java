@@ -13,10 +13,9 @@ public class BusinessEntity implements Serializable
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long   id;
 	private String name;
-	private String location;
+	private String placeID;
 	private String latlong;
 	private String category;
-	private String description;
 
 	public String getName()
 	{
@@ -28,14 +27,14 @@ public class BusinessEntity implements Serializable
 		this.name = name;
 	}
 
-	public String getLocation()
+	public String getPlaceID()
 	{
-		return location;
+		return placeID;
 	}
 
-	public void setLocation(String location)
+	public void setPlaceID(String placeID)
 	{
-		this.location = location;
+		this.placeID = placeID;
 	}
 
 	public String getLatlong()
@@ -58,20 +57,10 @@ public class BusinessEntity implements Serializable
 		this.category = category;
 	}
 
-	public String getDescription()
-	{
-		return description;
-	}
-
-	public void setDescription(String description)
-	{
-		this.description = description;
-	}
-
 	@Override
 	public String toString()
 	{
-		return "BusinessEntity [id=" + id + ", name=" + name + ", location=" + location + ", category=" + category
+		return "BusinessEntity [id=" + id + ", name=" + name + ", placeID=" + placeID +", latLong= "+ latlong +", category=" + category
 				+ "]";
 	}
 }
