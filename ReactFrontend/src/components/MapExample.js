@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import Dropdown from './Dropdown';
 
 class MapExample extends React.Component {
 	
@@ -10,6 +11,22 @@ class MapExample extends React.Component {
 		  width: '400px',
 		  height: '400px',
 		},
+		containerLeft: {
+		  width: '200px',
+		  float: 'left',
+		  height: '100px'
+		},
+		containerRight: {
+		  width: '200px',
+		  float: 'right',
+		  height: '100px'
+		},
+		options: [
+		  { key: 'All', text: 'All' },
+		  { key: 'Chinese', text: 'Chinese' }
+		],
+		category: 'nothing',
+		category2: 'nothing',
 		center: {
 		  lat: 41.257160,
 		  lng: 	-95.995102
@@ -17,7 +34,7 @@ class MapExample extends React.Component {
 	      isLoaded: false,
 	      geolocations: []
 	    };
-		this.apiKey = "PUT_KEY_HERE";
+		this.apiKey = "AIzaSyDAgWm9CAqvZ34543D-KMXNEu9RW-fZ1lQ";
 		}
 	
   componentDidMount() {
@@ -45,8 +62,15 @@ class MapExample extends React.Component {
       	)
 	}
 	
+	change(event){
+	this.setState({category: event.target.value});
+}
+change2(event){
+	this.setState({category2: event.target.value});
+}
+	
 	render() {
-		const { containerStyle, center, isLoaded, geolocations } = this.state;
+		const { containerStyle, containerLeft, containerRight, options, center, isLoaded, geolocations } = this.state;
 /*		console.log("TEST");
 		console.log(this.geoLocations);
 		console.log(this.isLoaded);*/
@@ -60,6 +84,15 @@ class MapExample extends React.Component {
 	      googleMapsApiKey={this.apiKey}
 		  mapIds={["b2142da1345959e7"]}
 	    >
+
+			<div style={containerLeft}>
+				<Dropdown id="categorySelect" onChange={this.change.bind(this)} options={options} />
+			</div>
+			<div style={containerRight}>
+				<Dropdown id="subCategorySelect" onChange={this.change2.bind(this)} options={options} />
+			</div>
+			<p>{this.state.category} and {this.state.category2}</p>
+			
 	      <GoogleMap
 	        mapContainerStyle={containerStyle}
 	        center={center}
