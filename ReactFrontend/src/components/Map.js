@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { Navbar } from 'react-bootstrap';
 import Sidebar from "react-sidebar";
 import axios from 'axios';
 import Dropdown from './Dropdown';
@@ -14,21 +15,26 @@ class Map extends React.Component {
 			height: '50rem',
 		},
 		containerLeft: {
-		  width: '200px',
+		  width: '400px',
 		  float: 'left',
 		  height: '100px'
 		},
 		containerRight: {
-		  width: '200px',
+		  width: '400px',
 		  float: 'right',
 		  height: '100px'
 		},
-		options: [
+		catOptions: [
 		  { key: 'All', text: 'All' },
-		  { key: 'Chinese', text: 'Chinese' }
+		  { key: 'Chinese', text: 'Chinese' },
+		  { key: 'BBQ', text: 'BBQ' },
+		  { key: 'Mexican', text: 'Mexican' },
 		],
-		category: 'nothing',
-		category2: 'nothing',
+		subOptions: [
+		  {key: 'All', text: 'All'},
+		],
+		category: 'All',
+		category2: 'All',
 			center: {
 			  lat: 41.257160,
 			  lng: 	-95.995102
@@ -121,13 +127,45 @@ class Map extends React.Component {
 
 	change(event){
 		this.setState({category: event.target.value});
+		this.setState({category2: 'All'});
+		var temp = [];
+		temp.push({key: 'All', text: 'All'});
+		if (event.target.value != 'All'){
+		  temp.push({key: event.target.value, text: event.target.value});
+		}
+		this.setState({subOptions: temp});
 	}
 	change2(event){
 		this.setState({category2: event.target.value});
 	}
 	
 	render() {
-		const { containerStyle, containerLeft, containerRight, options, center, zoom, isLoaded, geolocations } = this.state;
+		const { containerStyle, containerLeft, containerRight, catOptions, subOptions, center, zoom, isLoaded, category2, geolocations } = this.state;
+		let marker = [];
+		if (category2 == 'All'){
+			marker.push(<Marker position={{lat: 41.3439047, 
+					lng: -95.9850721}}
+				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")}} />);
+		} else {
+			marker.push(<Marker position={{lat: geolocations.results[0].geometry.location.lat, 
+					lng: geolocations.results[0].geometry.location.lng}}
+				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJSxRju7qPk4cRGjqP-_ShyDo")}} />);
+			marker.push(<Marker position={{lat: 41.3439047, 
+					lng: -95.9850721}}
+				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")}} />);
+		}
+		
+		let sidebar;
+		if (isLoaded){
+			sidebar = <Sidebar
+        		sidebar={this.state.sidebarContent}
+        		open={this.state.sidebarOpen}
+        		onSetOpen={this.onSetSidebarOpen}
+        		styles={{ sidebar: { background: "white" } }}
+      		>
+      		</Sidebar>
+		}
+		
 		if (!isLoaded) {
       		return <div>Loading...</div>;
     	} else {
@@ -136,21 +174,22 @@ class Map extends React.Component {
 	     	 	googleMapsApiKey={this.apiKey}
 				mapIds={["b2142da1345959e7"]}
 	  	  	>
-			<Sidebar
-        		sidebar={this.state.sidebarContent}
-        		open={this.state.sidebarOpen}
-        		onSetOpen={this.onSetSidebarOpen}
-        		styles={{ sidebar: { background: "white" } }}
-      		>
-      		</Sidebar>
 
-			<div style={containerLeft}>
-				<Dropdown id="categorySelect" onChange={this.change.bind(this)} options={options} />
-			</div>
-			<div style={containerRight}>
-				<Dropdown id="subCategorySelect" onChange={this.change2.bind(this)} options={options} />
-			</div>
-			<p>{this.state.category} and {this.state.category2}</p>
+			<Navbar bg="light" expand="lg">
+			  <Navbar.Collapse id="basic-navbar-nav">
+				<div style={containerLeft}>
+					<label for="catergorySelect"> Category: </label>
+					<Dropdown id="categorySelect" onChange={this.change.bind(this)} options={catOptions} />
+				</div>
+			
+				<div style={containerRight}>
+					<label for="subCatergorySelect"> Subcategory: </label>
+					<Dropdown id="subCategorySelect" onChange={this.change2.bind(this)} options={subOptions} />
+				</div>
+			  </Navbar.Collapse>
+			</Navbar>
+					
+			{/*sidebar*/}		
 
 	      	<GoogleMap
 	        	mapContainerStyle={containerStyle}
@@ -160,13 +199,9 @@ class Map extends React.Component {
 	      		>
 	        	{/* Child components, such as markers, info windows, etc. */
 				<div>
-					<Marker position={{lat: geolocations.results[0].geometry.location.lat, 
-					lng: geolocations.results[0].geometry.location.lng}}
-				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJSxRju7qPk4cRGjqP-_ShyDo")}} />
-				
-					<Marker position={{lat: 41.3439047, 
-					lng: -95.9850721}}
-				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")}} />
+					
+				{marker}
+					
 				</div>
 				}
 	        <></>
