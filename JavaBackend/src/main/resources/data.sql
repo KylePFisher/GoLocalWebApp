@@ -12,7 +12,19 @@ DROP TABLE IF EXISTS Businesses;
 	  ('Anthonys',
 	  'ChIJe_BFxWGMk4cRcNNQeqUBTkk',
 	    '41.220520,-96.024820',
-	    'Restaurant,American,Steak');
+	    'Restaurant,American,Steak'),
+	    ('Test B',
+	  'ChIJe_BFxWGMk4cRcNNQeqUBTkk',
+	    '41.220520,-96.024820',
+	    'Restaurant,American,Steak'),
+	    ('Test C',
+	  'ChIJe_BFxWGMk4cRcNNQeqUBTkk',
+	    '41.220520,-96.024820',
+	    'Restaurant,Southern'),
+	    ('Test C',
+	  'ChIJe_BFxWGMk4cRcNNQeqUBTkk',
+	    '41.220520,-96.024820',
+	    'Bar');
 	 /* ('Johnny Sortino''s Pizza', '7880 L St Omaha, NE 68127-1836', '41.213100,-96.037380', 'Restaurant,Italian','This pizza restaurant offers dine-in or take-out pizza and pasta. They also provide a large party room, game room and several big screen televisions for watching sports.'),
       ('Rice Bowl', '505 N Saddle Creek Rd Omaha, NE 68131-1745', '41.264200,-95.980530', 'Restaurant,Chinese', 'This is a quick serve Chinese restaurant offering dine in and carry out Chinese cuisine including chicken, beef and pork dishes, soup, and egg rolls.');
 

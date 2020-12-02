@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
-  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="ReactFrontend" externalSystemModuleType="sourceSet" externalSystemModuleVersion="unspecified" linkedProjectId=":ReactFrontend:main" linkedProjectPath="$MODULE_DIR$/../../../ReactFrontend" rootProjectPath="$MODULE_DIR$/../../.." />
-</module>

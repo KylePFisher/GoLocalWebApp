@@ -23,9 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347f774b-b018-446a-a468-75a2e37d0e15" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___JavaBackend___JavaBackend_0_0_1_SNAPSHOT_war__exploded_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Gradle___JavaBackend___JavaBackend_0_0_1_SNAPSHOT_war__exploded_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/GoLocalApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/GoLocalApp.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/GoLocalApp.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JavaBackend/GoLocalApp.JavaBackend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JavaBackend/GoLocalApp.JavaBackend.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JavaBackend/GoLocalApp.JavaBackend.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/JavaBackend/GoLocalApp.JavaBackend.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/JavaBackend/GoLocalApp.JavaBackend.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ReactFrontend/GoLocalApp.ReactFrontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ReactFrontend/GoLocalApp.ReactFrontend.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ReactFrontend/GoLocalApp.ReactFrontend.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/BusinessRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/BusinessRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/entities/BusinessEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/repositories/entities/BusinessEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/resources/data.sql" afterDir="false" />
     </list>

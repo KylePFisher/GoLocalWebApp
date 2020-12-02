@@ -2,6 +2,8 @@ package GoLocalJavaBackend.repositories.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Businesses")
@@ -55,6 +57,15 @@ public class BusinessEntity implements Serializable
 	public void setCategory(String category)
 	{
 		this.category = category;
+	}
+
+	public static ArrayList<BusinessEntity> asBusinessEntityList(BusinessEntity[] input)
+	{
+		ArrayList<BusinessEntity> returnValue = new ArrayList<BusinessEntity>();
+		for(int i = 0; i < input.length; i++)
+			returnValue.add(input[i]);
+
+		return returnValue;
 	}
 
 	@Override
