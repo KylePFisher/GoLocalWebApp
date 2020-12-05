@@ -106,6 +106,23 @@ public class PageController
 		return be.getLatlong();
 	}
 
+	@RequestMapping("/getLat")
+	public @ResponseBody String getLat(@RequestParam Long id)
+	{
+		BusinessEntity be = businessRepository.getById(id);
+		String[] latLong = be.getLatlong().split(",");
+		return latLong[0];
+	}
+
+	@RequestMapping("/getLong")
+	public @ResponseBody String getLong(@RequestParam Long id)
+	{
+		BusinessEntity be = businessRepository.getById(id);
+		String[] latLong = be.getLatlong().split(",");
+		return latLong[1];
+	}
+
+
 	@RequestMapping("/getPlaceID")
 	public @ResponseBody String getDescription(@RequestParam Long id)
 	{
