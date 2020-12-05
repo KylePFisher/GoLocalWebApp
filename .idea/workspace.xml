@@ -23,11 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347f774b-b018-446a-a468-75a2e37d0e15" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___JavaBackend___JavaBackend_0_0_1_SNAPSHOT_war__exploded_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Gradle___JavaBackend___JavaBackend_0_0_1_SNAPSHOT_war__exploded_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/java/GoLocalJavaBackend/controllers/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReactFrontend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ReactFrontend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBackend/src/test/java/GoLocalJavaBackend/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBackend/src/test/java/GoLocalJavaBackend/DemoApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
