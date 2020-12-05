@@ -24,12 +24,12 @@ class Map extends React.Component {
 		  float: 'right',
 		  height: '100px'
 		},
-		catOptions: [
-		  { key: 'All', text: 'All' },
-		  { key: 'Chinese', text: 'Chinese' },
-		  { key: 'BBQ', text: 'BBQ' },
-		  { key: 'Mexican', text: 'Mexican' },
-		],
+		ids: [],
+		idsEmpty: true,
+		marker: [],
+		primary: [],
+		secondary: [],
+		catOptions: [],
 		subOptions: [
 		  {key: 'All', text: 'All'},
 		],
@@ -125,46 +125,82 @@ class Map extends React.Component {
       	)
 	}
 
+
 	change(event){
 		this.setState({category: event.target.value});
-		this.setState({category2: 'All'});
-		var temp = [];
-		temp.push({key: 'All', text: 'All'});
-		if (event.target.value != 'All'){
-		  temp.push({key: event.target.value, text: event.target.value});
-		}
-		this.setState({subOptions: temp});
+		this.setState({subOptions: []})
+		fetch("/getSubCategories?primary=" + event.target.value)
+	      .then(res => res.json())
+	      .then(
+	        (result) => {
+				var {subOptions} = this.state
+				subOptions = result.map((item) => 
+				subOptions.push({key: item, text: item}));
+				this.setState({secondary: result})
+	        },
+	        (error) => {
+	          console.log("Error");
+			  console.log(error);
+	        }
+      	)
 	}
+	
 	change2(event){
 		this.setState({category2: event.target.value});
+		this.setState({ids: []})
+		this.setState({idsEmpty: true})
 	}
 	
 	render() {
-		const { containerStyle, containerLeft, containerRight, catOptions, subOptions, center, zoom, isLoaded, category2, geolocations } = this.state;
-		let marker = [];
-		if (category2 == 'All'){
-			marker.push(<Marker position={{lat: 41.3439047, 
-					lng: -95.9850721}}
-				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")}} />);
-		} else {
-			marker.push(<Marker position={{lat: geolocations.results[0].geometry.location.lat, 
+		const { containerStyle, containerLeft, containerRight, center, zoom, isLoaded, category, category2, geolocations } = this.state;
+		var {subOptions, catOptions, ids} = this.state;
+		let marker = []
+		/*if (this.state.idsEmpty){
+			fetch("/getByCategory?category=" + category + "," + category2)
+	      .then(res => res.json())
+	      .then(
+	        (result) => {
+				this.setState({ids: result})
+	        },
+	        (error) => {
+	          console.log("Error");
+			  console.log(error);
+	        }
+      	)
+			this.setState({idsEmpty: false})
+		}*/
+		/*marker.push(<Marker position={{lat: geolocations.results[0].geometry.location.lat, 
 					lng: geolocations.results[0].geometry.location.lng}}
 				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJSxRju7qPk4cRGjqP-_ShyDo")}} />);
 			marker.push(<Marker position={{lat: 41.3439047, 
 					lng: -95.9850721}}
-				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")}} />);
+				 	onClick = {() => {this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")}} />);*/
+		
+		if(catOptions.length == 0){
+			fetch("/getPrimaryCategories")
+	      .then(res => res.json())
+	      .then(
+	        (result) => {
+				this.setState({
+            		primary: result
+          		});
+	        },
+	        (error) => {
+	          console.log("Error");
+			  console.log(error);
+	        }
+      	)
+			catOptions = this.state.primary.map((item) =>
+   			catOptions.push({key: item, text: item}));
 		}
 		
-		let sidebar;
-		if (isLoaded){
-			sidebar = <Sidebar
+		let sidebar = <Sidebar
         		sidebar={this.state.sidebarContent}
         		open={this.state.sidebarOpen}
         		onSetOpen={this.onSetSidebarOpen}
         		styles={{ sidebar: { background: "white" } }}
       		>
-      		</Sidebar>
-		}
+      		</Sidebar>;
 		
 		if (!isLoaded) {
       		return <div>Loading...</div>;
@@ -188,7 +224,7 @@ class Map extends React.Component {
 				</div>
 			  </Navbar.Collapse>
 			</Navbar>
-					
+			{console.log(ids)}		
 			{/*sidebar*/}		
 
 	      	<GoogleMap
