@@ -54,20 +54,27 @@ public class PageController
 			primary.add(temp[PRIMARY_CATEGORY_POSITION]);
 		}
 
-		//Remove repeated elements
-		Set<String> set = new HashSet<>(primary);
-		primary.clear();
-		primary.addAll(set);
-
-		//Sort in alphabetical order
-		Collections.sort(primary, new Comparator<String>() {
-			@Override
-			public int compare(String s1, String s2) {
-				return s1.compareToIgnoreCase(s2);
-			}
-		});
+		primary = cleanAndOrganize(primary);
 
 		return primary.toArray(new String[primary.size()]);
+
+	}
+
+	@GetMapping("/getSubCategories")
+	public @ResponseBody String[] getSubCategories(String primary)
+	{
+		List<BusinessEntity> entries = getByCategory(primary);
+		ArrayList<String> categories = new ArrayList<String>();
+
+		for(int i = 0; i < entries.size(); i++)
+		{
+			String[] temp = entries.get(i).getCategory().split(",");
+			categories.addAll(Arrays.asList(Arrays.copyOfRange(temp,PRIMARY_CATEGORY_POSITION+1,temp.length)));
+		}
+
+		categories = cleanAndOrganize(categories);
+
+		return categories.toArray(new String[categories.size()]);
 
 	}
 
@@ -86,7 +93,9 @@ public class PageController
 			answer = Sets.intersection(answer, temp);
 		}
 
-		ArrayList<BusinessEntity> result = BusinessEntity.asBusinessEntityList(answer.toArray(BusinessEntity[]::new));
+		//ArrayList<BusinessEntity> result = BusinessEntity.asBusinessEntityList(answer.toArray(BusinessEntity[]::new));
+		ArrayList<BusinessEntity> result = new ArrayList<BusinessEntity>();
+		result.addAll(answer);
 		return result;
 	}
 
@@ -115,5 +124,22 @@ public class PageController
 	public @ResponseBody Iterable<BusinessEntity> getByName(@RequestParam String name)
 	{
 		return businessRepository.getAllByName(name);
+	}
+
+	private ArrayList<String> cleanAndOrganize(ArrayList<String> input)
+	{
+		//Remove repeated elements
+		Set<String> set = new HashSet<>(input);
+		input.clear();
+		input.addAll(set);
+
+		//Sort in alphabetical order
+		Collections.sort(input, new Comparator<String>() {
+			@Override
+			public int compare(String s1, String s2) {
+				return s1.compareToIgnoreCase(s2);
+			}
+		});
+		return input;
 	}
 }

@@ -11,7 +11,7 @@ apply plugin: 'org.springframework.boot'
 
 group = 'JavaBackend'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()

@@ -12,6 +12,7 @@ plugins {
 }
 
 apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -20,6 +21,9 @@ repositories {
 }
 
 dependencies {
+    implementation project(':ReactFrontend')
+   // implementation project(':JavaBackend')
+
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 
