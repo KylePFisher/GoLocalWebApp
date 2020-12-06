@@ -9,7 +9,7 @@ bin/
 .classpath
 .project
 .settings/
-.idea
+.idea/
 
 #React
 node_modules/
