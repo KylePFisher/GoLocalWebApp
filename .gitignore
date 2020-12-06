@@ -9,6 +9,7 @@ bin/
 .classpath
 .project
 .settings/
+.idea
 .idea/
 
 #React
