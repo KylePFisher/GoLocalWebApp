@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS Businesses;
+DROP TABLE IF EXISTS businesses;
 
-	CREATE TABLE Businesses (
+	CREATE TABLE businesses (
 	  id INT AUTO_INCREMENT  PRIMARY KEY,
 	  name VARCHAR(250) NOT NULL,
 	  location VARCHAR(250) NOT NULL,
@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS Businesses;
 	  description VARCHAR(250) NOT NULL
 	);
 
-	INSERT INTO Businesses (name, location, latlong, category, description) VALUES
+	INSERT INTO businesses (name, location, latlong, category, description) VALUES
 	  ('Anthonys',
 	  '7220 F St, Omaha, NE 68127-1811',
 	    '41.220520,-96.024820',

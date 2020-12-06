@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PageController
 {
-
-	@Autowired
 	private BusinessRepository businessRepository;
 
 	@Autowired
-	public PageController() {
+	public PageController(BusinessRepository businessRepository) {
+		this.businessRepository = businessRepository;
 	}
 
 	@RequestMapping(value = "/")
