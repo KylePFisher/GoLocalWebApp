@@ -24,16 +24,14 @@ class Map extends React.Component {
 				float: 'right',
 				height: '100px'
 			},
-			ids: [],
-			idsEmpty: true,
-			marker: [],
+			businesses: [],
 			primary: [],
 			secondary: [],
 			catOptions: [],
 			subOptions: [
 				{key: 'All', text: 'All'},
 			],
-			category: 'All',
+			category: 'Restaurant',
 			category2: 'All',
 			center: {
 				lat: 41.257160,
@@ -108,6 +106,8 @@ class Map extends React.Component {
 					)
 			} else {
 				if (response.data.result.reviews !== undefined) {
+					console.log("asdf");
+					console.log(response);
 					this.setState({
 						sidebarOpen: open,
 						sidebarContent: <div>
@@ -122,6 +122,8 @@ class Map extends React.Component {
 						</div>
 					});
 				} else {
+					console.log("asdf");
+					console.log(response);
 					this.setState({
 						sidebarOpen: open,
 						sidebarContent: <div>
@@ -157,113 +159,43 @@ class Map extends React.Component {
 			)
 	}
 
-
 	change(event){
 		this.setState({category: event.target.value});
 		this.setState({subOptions: []})
-		fetch("/getSubCategories?primary=" + event.target.value)
-			.then(res => res.json())
-			.then(
-				(result) => {
-					var {subOptions} = this.state
-					console.log("RESULT TIME")
-					console.log(result)
-					result.push("All")
-					subOptions.push({key: "Select", text: "Select"})
-					subOptions = result.map((item) =>
-						subOptions.push({key: item, text: item}));
-					this.setState({secondary: result})
-				},
-				(error) => {
-					console.log("Error");
-					console.log(error);
-				}
-			)
-	}
-
-	change2(event){
-		this.setState({category2: ""})
-		this.setState({category2: event.target.value});
-		this.setState({ids: []})
-		this.setState({idsEmpty: true})
-	}
-
-	render() {
-		const { containerStyle, containerLeft, containerRight, center, zoom, isLoaded, category, category2, geolocations } = this.state;
-		var {subOptions, catOptions, ids} = this.state;
-		let marker = []
-		if (this.state.idsEmpty){
-			let catUrl;
-			if (category2 === "" || category2 === "All") {
-				catUrl = "/getByCategory?category=" + category;
-			} else {
-				catUrl = "/getByCategory?category=" + category + "," + category2;
-			}
-			console.log("CATURL");
-			console.log(catUrl);
-			fetch(catUrl)
+		this.setState({businesses: []})
+		if (event.target.value == 'All'){
+			this.setState({subOptions: [{key: 'All', text: 'All'}]})
+			this.setState({category2: 'All'})
+		} else {
+			fetch("/GoLocal/getSubCategories?primary=" + event.target.value)
 				.then(res => res.json())
 				.then(
 					(result) => {
-						this.setState({ids: result})
-						console.log("IDS")
-						console.log(result)
+						var {subOptions} = this.state
+						subOptions = result.map((item) =>
+							subOptions.push({key: item, text: item}));
+						this.setState({secondary: result})
+						this.setState({category2: result[0]})
 					},
 					(error) => {
 						console.log("Error");
 						console.log(error);
 					}
 				)
-			this.setState({idsEmpty: false})
 		}
-		// if (this.state.idsEmpty){
-		// 	fetch("/getByCategory?category=" + category + "," + category2)
-		//   .then(res => res.json())
-		//   .then(
-		//     (result) => {
-		// 		this.setState({ids: result})
-		//     },
-		//     (error) => {
-		//       console.log("Error");
-		// 	  console.log(error);
-		//     }
-		// )
-		// 	this.setState({idsEmpty: false})
-		// }
+	}
 
-		if (!this.state.idsEmpty) {
-			let i;
-			for (i = 0; i < this.state.ids.length; i++) {
-				let latAndLng = this.state.ids[i].latlong.split(",")
-				let placeId = this.state.ids[i].placeID
-				marker.push(<Marker position={{
-					lat: parseFloat(latAndLng[0]),
-					lng: parseFloat(latAndLng[1])
-				}} onClick={() => {
-					this.onSetSidebarOpen(true, placeId)
-				}}/>);
-			}
-		}
+	change2(event){
+		this.setState({category2: event.target.value})
+		this.setState({businesses: []})
+	}
 
-		// if (geolocations.results !== undefined) {
-		// 	marker.push(<Marker position={{
-		// 		lat: geolocations.results[0].geometry.location.lat,
-		// 		lng: geolocations.results[0].geometry.location.lng
-		// 	}}
-		// 						onClick={() => {
-		// 							this.onSetSidebarOpen(true, "ChIJSxRju7qPk4cRGjqP-_ShyDo")
-		// 						}}/>);
-		// 	marker.push(<Marker position={{
-		// 		lat: 41.3439047,
-		// 		lng: -95.9850721
-		// 	}}
-		// 						onClick={() => {
-		// 							this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")
-		// 						}}/>);
-		// }
-
+	render() {
+		const { containerStyle, containerLeft, containerRight, center, zoom, isLoaded, category2, geolocations } = this.state;
+		var {subOptions, catOptions, category, businesses} = this.state;
+		var marker
 		if(catOptions.length == 0){
-			fetch("/getPrimaryCategories")
+			fetch("/GoLocal/getPrimaryCategories")
 				.then(res => res.json())
 				.then(
 					(result) => {
@@ -279,6 +211,54 @@ class Map extends React.Component {
 			catOptions = this.state.primary.map((item) =>
 				catOptions.push({key: item, text: item}));
 		}
+		let catInput = ""
+		if (category.length == 0){
+			category = this.state.primary[0]
+		}
+		if (category != 'All'){
+			catInput = category
+			if (category2 != 'All'){
+				catInput = catInput + "," + category2
+			}
+			if (businesses.length == 0){
+				console.log(category)
+				console.log(category2)
+				fetch("/GoLocal/getByCategory?category=" + catInput)
+					.then(res => res.json())
+					.then(
+						(result) => {
+							this.setState({businesses: result})
+						},
+						(error) => {
+							console.log("Error");
+							console.log(error);
+						}
+					)
+			}
+		} else {
+			if (businesses.length == 0){
+				fetch("/GoLocal/getAll")
+					.then(res => res.json())
+					.then(
+						(result) => {
+							console.log("POTATO")
+							console.log(result)
+							this.setState({businesses: result})
+						},
+						(error) => {
+							console.log("Error");
+							console.log(error);
+						}
+					)
+			}
+		}
+		console.log("ROPE")
+		console.log(businesses)
+		marker = businesses.map((item) =>
+			<Marker position={{lat: parseFloat(item.latlong.split(",")[0], 10),
+				lng: parseFloat(item.latlong.split(",")[1], 10 )}}
+					onClick = {() => {this.onSetSidebarOpen(true, item.placeID + "")}} />
+		)
 
 		if (!isLoaded) {
 			return <div>Loading...</div>;
@@ -323,7 +303,7 @@ class Map extends React.Component {
 							</div>
 						</Navbar.Collapse>
 					</Navbar>
-					{console.log(ids)}
+
 					{/*sidebar*/}
 
 					<GoogleMap

@@ -31,7 +31,7 @@ public class PageController
 	}
 
 	@GetMapping("/getAll")
-	public @ResponseBody Iterable<BusinessEntity> getAll()
+	public @ResponseBody List<BusinessEntity> getAll()
 	{
 		return businessRepository.findAll();
 	}

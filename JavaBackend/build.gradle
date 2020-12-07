@@ -9,8 +9,8 @@ apply plugin: 'eclipse'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 
-group = 'JavaBackend'
-version = '0.0.1-SNAPSHOT'
+group = 'GoLocal'
+version = '1.0.0-RELEASE'
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
 
