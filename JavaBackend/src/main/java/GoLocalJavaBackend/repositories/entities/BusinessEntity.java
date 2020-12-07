@@ -2,9 +2,11 @@ package GoLocalJavaBackend.repositories.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "Businesses")
+@Table(name = "businesses")
 public class BusinessEntity implements Serializable
 {
 	private static final long serialVersionUID = 4904883384937165716L;
@@ -13,10 +15,9 @@ public class BusinessEntity implements Serializable
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long   id;
 	private String name;
-	private String location;
+	private String placeID;
 	private String latlong;
 	private String category;
-	private String description;
 
 	public String getName()
 	{
@@ -28,14 +29,14 @@ public class BusinessEntity implements Serializable
 		this.name = name;
 	}
 
-	public String getLocation()
+	public String getPlaceID()
 	{
-		return location;
+		return placeID;
 	}
 
-	public void setLocation(String location)
+	public void setPlaceID(String placeID)
 	{
-		this.location = location;
+		this.placeID = placeID;
 	}
 
 	public String getLatlong()
@@ -58,20 +59,19 @@ public class BusinessEntity implements Serializable
 		this.category = category;
 	}
 
-	public String getDescription()
+	public static ArrayList<BusinessEntity> asBusinessEntityList(BusinessEntity[] input)
 	{
-		return description;
-	}
+		ArrayList<BusinessEntity> returnValue = new ArrayList<BusinessEntity>();
+		for(int i = 0; i < input.length; i++)
+			returnValue.add(input[i]);
 
-	public void setDescription(String description)
-	{
-		this.description = description;
+		return returnValue;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "BusinessEntity [id=" + id + ", name=" + name + ", location=" + location + ", category=" + category
+		return "BusinessEntity [id=" + id + ", name=" + name + ", placeID=" + placeID +", latLong= "+ latlong +", category=" + category
 				+ "]";
 	}
 }

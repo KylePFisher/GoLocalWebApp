@@ -2,6 +2,7 @@
   "name": "go-local-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://simoniniserver.ddns.net:8080/GoLocal/",
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -9,8 +10,10 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+    "react-select": "^3.1.0",
     "react-sidebar": "^3.0.2"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.3.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'org.springframework.boot' version '1.5.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.6.RELEASE'
 	id 'cool.william.frontend' version '0.0.15'
 }
 
@@ -9,12 +9,17 @@ apply plugin: 'eclipse'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 
-group = 'JavaBackend'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+group = 'GoLocal'
+version = '1.0.0-RELEASE'
+targetCompatibility = '1.6'
+sourceCompatibility = '1.6'
 
 repositories {
 	mavenCentral()
+}
+
+springBoot {
+	mainClass = "GoLocalJavaBackend.BackendApplication"
 }
 
 dependencies {
@@ -23,8 +28,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework:spring-web'
-	compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
-	compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'
+	implementation("com.google.guava:guava:30.0-jre")
+	//compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+	//compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
