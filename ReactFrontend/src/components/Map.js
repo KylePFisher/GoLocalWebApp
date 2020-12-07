@@ -69,43 +69,75 @@ class Map extends React.Component {
 					}
 				})])
 
-			const whatever = await axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo",
-				{
-					params: {
-						photoreference: response.data.result.photos[0].photo_reference,
-						key: this.apiKey,
-						maxwidth: 400,
-						maxheight: 400
-					},
-					headers: {
-						"Access-Control-Allow-Origin": "*"
-					},
-					responseType: 'blob'
-				})
-				.then(
-					(result) => {
-						console.log("asdf");
-						console.log(response);
-						this.setState({
-							sidebarOpen: open,
-							sidebarContent:  <div><img src={`${URL.createObjectURL(result.data)}`} class="center"/>
-								<p><h3>{response.data.result.name}</h3>
-									Rating Average: {response.data.result.rating} <br/>
-									<h4>Reviews:</h4>
-									Author: {response.data.result.reviews[0].author_name} <br/>
-									Rating: {response.data.result.reviews[0].rating} <br/>
-									Date posted: {response.data.result.reviews[0].relative_time_description} <br/>
-									<div class="wrap">Review: {response.data.result.reviews[0].text} </div></p></div>
-						});
-					},
-					(error) => {
-						console.log("Error");
-						console.log(error);
-					}
-				)
+			if (response.data.result.photos !== undefined) {
+				const whatever = await axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo",
+					{
+						params: {
+							photoreference: response.data.result.photos[0].photo_reference,
+							key: this.apiKey,
+							maxwidth: 400,
+							maxheight: 400
+						},
+						headers: {
+							"Access-Control-Allow-Origin": "*"
+						},
+						responseType: 'blob'
+					})
+					.then(
+						(result) => {
+							console.log("asdf");
+							console.log(response);
+							this.setState({
+								sidebarOpen: open,
+								sidebarContent: <div><img src={`${URL.createObjectURL(result.data)}`} class="center"/>
+									<p><h3>{response.data.result.name}</h3>
+										Rating Average: {response.data.result.rating} <br/>
+										<h4>Reviews:</h4>
+										Author: {response.data.result.reviews[0].author_name} <br/>
+										Rating: {response.data.result.reviews[0].rating} <br/>
+										Date posted: {response.data.result.reviews[0].relative_time_description} <br/>
+										<div class="wrap">Review: {response.data.result.reviews[0].text} </div>
+									</p>
+								</div>
+							});
+						},
+						(error) => {
+							console.log("Error");
+							console.log(error);
+						}
+					)
+			} else {
+				if (response.data.result.reviews !== undefined) {
+					this.setState({
+						sidebarOpen: open,
+						sidebarContent: <div>
+							<p><h3>{response.data.result.name}</h3>
+								Rating Average: {response.data.result.rating} <br/>
+								<h4>Reviews:</h4>
+								Author: {response.data.result.reviews[0].author_name} <br/>
+								Rating: {response.data.result.reviews[0].rating} <br/>
+								Date posted: {response.data.result.reviews[0].relative_time_description} <br/>
+								<div class="wrap">Review: {response.data.result.reviews[0].text} </div>
+							</p>
+						</div>
+					});
+				} else {
+					this.setState({
+						sidebarOpen: open,
+						sidebarContent: <div>
+							<p><h3>{response.data.result.name}</h3>
+								Rating Average: {response.data.result.rating} <br/>
+								<h4>Reviews:</h4>
+								<p>There are no reviews for this store.</p>
+							</p>
+						</div>
+					});
+				}
+
+			}
+
+
 		}
-
-
 	}
 	componentDidMount() {
 		fetch("https://maps.googleapis.com/maps/api/geocode/json?place_id=ChIJSxRju7qPk4cRGjqP-_ShyDo&key=" + this.apiKey)
@@ -134,6 +166,10 @@ class Map extends React.Component {
 			.then(
 				(result) => {
 					var {subOptions} = this.state
+					console.log("RESULT TIME")
+					console.log(result)
+					result.push("All")
+					subOptions.push({key: "Select", text: "Select"})
 					subOptions = result.map((item) =>
 						subOptions.push({key: item, text: item}));
 					this.setState({secondary: result})
@@ -146,6 +182,7 @@ class Map extends React.Component {
 	}
 
 	change2(event){
+		this.setState({category2: ""})
 		this.setState({category2: event.target.value});
 		this.setState({ids: []})
 		this.setState({idsEmpty: true})
@@ -156,11 +193,21 @@ class Map extends React.Component {
 		var {subOptions, catOptions, ids} = this.state;
 		let marker = []
 		if (this.state.idsEmpty){
-			fetch("/getByCategory?category=" + category + "," + category2)
+			let catUrl;
+			if (category2 === "" || category2 === "All") {
+				catUrl = "/getByCategory?category=" + category;
+			} else {
+				catUrl = "/getByCategory?category=" + category + "," + category2;
+			}
+			console.log("CATURL");
+			console.log(catUrl);
+			fetch(catUrl)
 				.then(res => res.json())
 				.then(
 					(result) => {
 						this.setState({ids: result})
+						console.log("IDS")
+						console.log(result)
 					},
 					(error) => {
 						console.log("Error");
@@ -184,22 +231,36 @@ class Map extends React.Component {
 		// 	this.setState({idsEmpty: false})
 		// }
 
-		if (geolocations.results !== undefined) {
-			marker.push(<Marker position={{
-				lat: geolocations.results[0].geometry.location.lat,
-				lng: geolocations.results[0].geometry.location.lng
-			}}
-								onClick={() => {
-									this.onSetSidebarOpen(true, "ChIJSxRju7qPk4cRGjqP-_ShyDo")
-								}}/>);
-			marker.push(<Marker position={{
-				lat: 41.3439047,
-				lng: -95.9850721
-			}}
-								onClick={() => {
-									this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")
-								}}/>);
+		if (!this.state.idsEmpty) {
+			let i;
+			for (i = 0; i < this.state.ids.length; i++) {
+				let latAndLng = this.state.ids[i].latlong.split(",")
+				let placeId = this.state.ids[i].placeID
+				marker.push(<Marker position={{
+					lat: parseFloat(latAndLng[0]),
+					lng: parseFloat(latAndLng[1])
+				}} onClick={() => {
+					this.onSetSidebarOpen(true, placeId)
+				}}/>);
+			}
 		}
+
+		// if (geolocations.results !== undefined) {
+		// 	marker.push(<Marker position={{
+		// 		lat: geolocations.results[0].geometry.location.lat,
+		// 		lng: geolocations.results[0].geometry.location.lng
+		// 	}}
+		// 						onClick={() => {
+		// 							this.onSetSidebarOpen(true, "ChIJSxRju7qPk4cRGjqP-_ShyDo")
+		// 						}}/>);
+		// 	marker.push(<Marker position={{
+		// 		lat: 41.3439047,
+		// 		lng: -95.9850721
+		// 	}}
+		// 						onClick={() => {
+		// 							this.onSetSidebarOpen(true, "ChIJy1dqY9-Tk4cRWRoSPXDYoOo")
+		// 						}}/>);
+		// }
 
 		if(catOptions.length == 0){
 			fetch("/getPrimaryCategories")
